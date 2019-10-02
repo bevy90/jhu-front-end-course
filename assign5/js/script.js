@@ -182,6 +182,7 @@ function buildAboutHtml(aboutHtml) {
     }
     finalHtml += "<span class='" + classes + "'></span>";
   }
+  finalHtml += "<span>" + rating + " star rating</span>";
   insertHtml("#main-content", finalHtml);
 }
 
