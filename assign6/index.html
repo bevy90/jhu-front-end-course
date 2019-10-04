@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Lunch Checker</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container text-center" ng-controller="LunchController">
+			<h1 id="title">Lunch Checker</h1>
+			<p>*Empty items are not considered towards the count</p>
+			<form>
+				<input id="lunch-menu" type="text"
+           placeholder="list comma separated dishes you usually have for lunch"
+           class="form-control" ng-model="menu">
+        <button class="btn btn-default" ng-click="checkMenu()">Check If Too Much</button>
+			</form>
+
+      <div ng-style="textbox">
+      	{{message}}
+      </div>
+			
+		</div>
+
+		<script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+	</body>
+</html>
