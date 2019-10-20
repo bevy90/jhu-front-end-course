@@ -21,7 +21,12 @@
           <div class="list">
             <h2>To Buy:</h2>
            <ul>
-             <li ng-repeat="item in toBuy.list.items">Buy {{ item.quantity }} {{ item.name }} <button class="btn btn-default" ng-click="toBuy.moveItem($index);"><i class="fas fa-check"></i> Bought</button></li>
+             <li ng-repeat="item in toBuy.list.items">Buy {{ item.quantity }} {{ item.name }} 
+                <span>{{ toBuy.getTotalCost($index); }}</span>
+                <button class="btn btn-default" ng-click="toBuy.moveItem($index);">
+                  <i class="fas fa-check"></i> Bought
+                </button>
+              </li>
            </ul>
            <div ng-if="toBuy.list.isEmpty" class="emptyMessage">Everything is bought!</div>
           </div>
@@ -32,7 +37,7 @@
           <div class="list">
             <h2>Already Bought:</h2>
            <ul>
-             <li ng-repeat="item in bought.list.items">Bought {{ item.quantity }} {{ item.name }}</li>
+             <li ng-repeat="item in bought.list.items">Bought {{ item.quantity }} {{ item.name }} for total price of {{ bought.getTotalCost($index); }}</li>
            </ul>
            <div ng-if="bought.list.isEmpty" class="emptyMessage">Nothing bought yet.</div>
           </div>

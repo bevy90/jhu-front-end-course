@@ -45,3 +45,10 @@ li > button {
 button > i {
   color: green;
 }
+
+li > span {
+  height: 70px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #bbb;
+}
