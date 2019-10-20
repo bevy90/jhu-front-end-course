@@ -5,7 +5,7 @@
     
     
     /* Service to share data between the 2 controllers */
-    function ShoppingListCheckOffService(costFilter, $filter) {
+    function ShoppingListCheckOffService(costFilter) {
         var service = this,
             shoppingList = { isEmpty: false,
                 items: [ {name: "Cookies", quantity: 5, pricePerItem: .5},
@@ -51,7 +51,7 @@
         }
 
         service.getTotalCost = function (itemPrice, qty) {
-            return $filter('currency')(costFilter(itemPrice, qty));
+            return costFilter(itemPrice, qty);
         };
         
         service.getItems = function () {
@@ -63,14 +63,14 @@
         };
     }
 
-    ShoppingListCheckOffService.$inject = ['costFilter', '$filter'];
+    ShoppingListCheckOffService.$inject = ['costFilter'];
 
     function CostFilterFactory() {
         return function (input, qty) {
             input = input || 0;
             qty = qty || 0;
             var totalCost = input * qty;
-            return totalCost;
+            return '$$$' + totalCost.toFixed(2);
         };
     }
     
