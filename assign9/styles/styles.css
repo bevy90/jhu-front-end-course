@@ -1,0 +1,62 @@
+body {
+    background-color: lightyellow;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.jumbotron {
+    height: 600px;
+    margin-top: 50px;
+    background-color: #ffbc2c;
+}
+
+a[ui-sref]{
+    font-size: 18px;
+}
+
+.current {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3568ff;
+}
+
+.title {
+    font-size: 30px;
+    border-bottom: 4px solid #3568ff;
+}
+
+.category {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.index {
+    border-radius: 100%;
+    background-color: #ffbc2c;
+    width: 25px;
+    margin: 0 auto;
+}
+
+span[ui-sref] {
+    font-size: 20px;
+}
+
+span[ui-sref]:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#table {
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+}
+
+td {
+    border-bottom: 1px solid #3568ff;
+    padding: 10px;
+}
