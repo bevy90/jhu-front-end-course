@@ -1,0 +1,50 @@
+<div class="container">
+    <div ng-if="info.userExist();">
+        <h1 class="text-center user-heading"> Profile</h1>
+        <div>
+            <table>
+                <tr>
+                    <td>Firstname</td>
+                    <td>{{ info.user.fname }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Lastname</td>
+                    <td>{{ info.user.lname }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Email</td>
+                    <td>{{ info.user.email }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Phone</td>
+                    <td>{{ info.user.phone }}</td>
+                </tr>
+                
+                <tr>
+                    <td>Item number</td>
+                    <td>{{ info.user.favDish }}</td>
+                </tr>
+            </table>
+        </div>
+    
+        <h1 class="text-center user-heading">Favorite Menu Item</h1>
+        <div>
+            <div class="col-sm-7 dish-photo">
+                <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.user.dish.short_name}}.jpg" alt="{{info.user.dish.name}}">
+            </div>
+
+            <div class="col-sm-5 dish-description">
+                <h4 class="dish-title">{{ info.user.dish.name }}</h4>
+                <p class="dish-detail">{{ info.user.dish.description }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div ng-if="!info.userExist();" class="signup">
+        <p>You have not signed up yet!</p>
+        <a ui-sref="public.register">Sign up Now</a>
+    </div>
+</div>

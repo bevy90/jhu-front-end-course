@@ -1,0 +1,48 @@
+<div class="container">
+    <fieldset>
+        <legend>Registration</legend>
+
+        <form name="myForm" novalidate>
+
+            <input type="text" name="fname" placeholder="Enter your first name"
+                   ng-model="reg.user.fname" required>
+            <span class="warning" ng-if="myForm.fname.$error.required && myForm.fname.$touched">
+                Firstname is required
+            </span>
+            <br>
+
+            <input type="text" name="lname" placeholder="Enter your last name"
+                   ng-model="reg.user.lname" required>
+            <span class="warning" ng-if="myForm.lname.$error.required && myForm.lname.$touched">
+                Lastname is required
+            </span>
+            <br>
+
+            <input type="email" name="email" placeholder="Enter your email address"
+                   ng-model="reg.user.email" required>
+            <span class="warning" ng-if="myForm.email.$invalid && myForm.email.$touched">
+                Invalid email address format
+            </span>
+            <br>
+
+            <input type="tel" name="phone" placeholder="Phone ###-###-####"
+                   ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span class="warning" ng-if="myForm.phone.$invalid && myForm.phone.$touched">
+                Phone must be in the format ###-###-####.
+            </span>
+            <br>
+
+            <input type="text" name="favDish" placeholder="Enter the short name of your favorite dish" ng-model="reg.user.favDish" required shortname>
+            <span class="warning" ng-if="(myForm.favDish.$error.required || myForm.favDish.$error.shortname) && myForm.favDish.$touched">
+                Invalid Short Name
+            </span>
+            <br>
+
+            <button ng-disabled="myForm.$invalid" ng-click="reg.submit();">Register</button>
+        </form>
+    </fieldset>
+
+    <div class="save" ng-if="reg.completed">
+        Registration Succesful!
+    </div>
+</div>
