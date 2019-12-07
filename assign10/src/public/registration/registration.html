@@ -34,7 +34,7 @@
 
             <input type="text" name="favDish" placeholder="Enter the short name of your favorite dish" ng-model="reg.user.favDish" required shortname>
             <span class="warning" ng-if="(myForm.favDish.$error.required || myForm.favDish.$error.shortname) && myForm.favDish.$touched">
-                Invalid Short Name
+                No such menu number exists
             </span>
             <br>
 
