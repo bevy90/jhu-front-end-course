@@ -57,7 +57,7 @@ describe('registration directive', function() {
 		$httpBackend.flush();
 	});
 
-	it('should show error message no favorite dish is entered', function() {
+	it('should show error message when no favorite dish is entered', function() {
 		form.favDish.$touched = true;
 		$scope.$digest();
 		expect(form.favDish.$touched).toBe(true);
